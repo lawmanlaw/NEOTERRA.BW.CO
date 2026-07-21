@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <script src="./image-slot.js"></script>
+  <style>
+    body{margin:0}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+    a{color:inherit;text-decoration:none}
+  </style>
+</helmet>
+<div style="font-family:'Helvetica Neue',Arial,sans-serif;background:#ffffff;color:#053155;width:100%;min-width:1180px">
+
+  <!-- NAV -->
+  <div style="position:absolute;top:0;left:0;right:0;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:22px 48px;background:linear-gradient(180deg,rgba(5,49,85,0.55) 0%,rgba(5,49,85,0) 100%);flex-wrap:nowrap;gap:24px">
+    <div style="display:flex;align-items:center;gap:14px;flex-shrink:0">
+      <img src="assets/logo-mark.png" alt="Neoterra" style="width:36px;height:36px;flex-shrink:0;border-radius:6px">
+      <div style="display:flex;flex-direction:column;line-height:1.15">
+        <span style="font-size:20px;font-weight:800;letter-spacing:1px;color:#ffffff">NEOTERRA</span>
+        <span style="font-size:10px;letter-spacing:3px;color:#c3cfe0">GIS SERVICES</span>
+      </div>
+    </div>
+    <nav style="display:flex;gap:26px;font-size:14px;font-weight:500;color:#ffffff;flex-wrap:nowrap;white-space:nowrap">
+      <a href="#about" style="opacity:0.92">About us</a>
+      <a href="#services" style="opacity:0.92">Our services</a>
+      <a href="#why" style="opacity:0.92">Why Neoterra</a>
+      <a href="#values" style="opacity:0.92">Our values</a>
+      <a href="#team" style="opacity:0.92">Founding team</a>
+      <a href="#contact" style="opacity:0.92">Contact us</a>
+    </nav>
+    <div style="display:flex;flex-direction:column;gap:5px;width:26px;cursor:pointer;flex-shrink:0">
+      <div style="height:2px;background:#ffffff;width:100%"></div>
+      <div style="height:2px;background:#ffffff;width:100%"></div>
+      <div style="height:2px;background:#ffffff;width:70%;align-self:flex-end"></div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <div style="position:relative;width:100%;height:720px;background-image:url('assets/hero-bg.jpg');background-size:cover;background-position:center 30%;display:flex;align-items:center">
+    <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,49,85,0.6) 0%,rgba(5,49,85,0.2) 55%,rgba(5,49,85,0.05) 100%)"></div>
+    <div style="position:relative;z-index:2;margin-left:48px;max-width:700px;background:rgba(5,49,85,0.78);backdrop-filter:blur(2px);border-radius:0 22px 22px 0;padding:64px 72px 48px 56px;display:flex;flex-direction:column;gap:28px;animation:fadeUp 0.6s ease both;box-sizing:border-box">
+      <h1 style="margin:0;font-size:52px;line-height:1.12;font-weight:800;letter-spacing:-0.5px;color:#ffffff">We turn spatial data into decisions that shape the region.</h1>
+      <p style="margin:0;font-size:18px;line-height:1.55;color:#c3cfe0">New Earth. Deeper Insight. — GIS solutions across Botswana and the broader region.</p>
+      <a href="#services" style="display:flex;align-items:center;gap:10px;font-size:17px;font-weight:500;color:#ffffff">
+        Explore our services
+        <span style="font-size:20px">↗</span>
+      </a>
+    </div>
+    <div style="position:absolute;bottom:36px;right:56px;z-index:2;display:flex;gap:10px">
+      <span style="width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,0.4)"></span>
+      <span style="width:9px;height:9px;border-radius:50%;background:#4a7fd6"></span>
+      <span style="width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,0.4)"></span>
+    </div>
+  </div>
+
+  <!-- TABS + FEATURE CARDS -->
+  <div style="background:#ffffff;padding:36px 48px 0">
+    <div style="display:flex;gap:8px;border-bottom:1px solid #e2e8f2">
+      <a href="#about" style="padding:14px 22px;font-size:16px;font-weight:700;color:#053155;border-bottom:3px solid #053155">About</a>
+      <a href="#services" style="padding:14px 22px;font-size:16px;color:#5d6f8e">Our services</a>
+      <a href="#values" style="padding:14px 22px;font-size:16px;color:#5d6f8e">Our values</a>
+      <a href="#team" style="padding:14px 22px;font-size:16px;color:#5d6f8e">Founding team</a>
+    </div>
+  </div>
+  <div style="background:#ffffff;padding:48px 48px 0;display:grid;grid-template-columns:repeat(3,1fr);gap:28px">
+    <div style="position:relative;height:520px;border-radius:14px;overflow:hidden">
+      <image-slot id="card-services" shape="rect" placeholder="Drop a mapping / fieldwork photo"></image-slot>
+      <div style="position:absolute;left:0;right:0;bottom:0;padding:80px 28px 28px;background:linear-gradient(180deg,rgba(5,49,85,0) 0%,rgba(5,49,85,0.85) 60%);display:flex;flex-direction:column;gap:10px;pointer-events:none">
+        <a href="#services" style="display:flex;align-items:center;gap:12px;font-size:26px;font-weight:700;color:#ffffff;pointer-events:auto">Our services <span style="font-size:22px;font-weight:400">↗</span></a>
+        <p style="margin:0;font-size:15px;line-height:1.55;color:#dde5f1">From cartography to consulting — a full suite of GIS services for government, business, and development organizations.</p>
+      </div>
+    </div>
+    <div style="position:relative;height:520px;border-radius:14px;overflow:hidden">
+      <image-slot id="card-vision" shape="rect" placeholder="Drop a landscape / satellite photo"></image-slot>
+      <div style="position:absolute;left:0;right:0;bottom:0;padding:80px 28px 28px;background:linear-gradient(180deg,rgba(5,49,85,0) 0%,rgba(5,49,85,0.85) 60%);display:flex;flex-direction:column;gap:10px;pointer-events:none">
+        <a href="#about" style="display:flex;align-items:center;gap:12px;font-size:26px;font-weight:700;color:#ffffff;pointer-events:auto">Our vision <span style="font-size:22px;font-weight:400">↗</span></a>
+        <p style="margin:0;font-size:15px;line-height:1.55;color:#dde5f1">To be the leading GIS services provider in Southern Africa — recognized for innovation, precision, and impact.</p>
+      </div>
+    </div>
+    <div style="position:relative;height:520px;border-radius:14px;overflow:hidden">
+      <image-slot id="card-people" shape="rect" placeholder="Drop a team photo"></image-slot>
+      <div style="position:absolute;left:0;right:0;bottom:0;padding:80px 28px 28px;background:linear-gradient(180deg,rgba(5,49,85,0) 0%,rgba(5,49,85,0.85) 60%);display:flex;flex-direction:column;gap:10px;pointer-events:none">
+        <a href="#team" style="display:flex;align-items:center;gap:12px;font-size:26px;font-weight:700;color:#ffffff;pointer-events:auto">Our people <span style="font-size:22px;font-weight:400">↗</span></a>
+        <p style="margin:0;font-size:15px;line-height:1.55;color:#dde5f1">A multi-disciplinary founding team with deep expertise across GIS, remote sensing, and data management.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT + VISION/MISSION -->
+  <div id="about" style="padding:96px 48px;display:grid;grid-template-columns:1.2fr 1fr;gap:72px;background:#ffffff">
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <span style="font-size:13px;font-weight:700;letter-spacing:2px;color:#4a7fd6">01 — ABOUT NEOTERRA</span>
+      <h2 style="margin:0;font-size:38px;font-weight:800;line-height:1.15;color:#053155">Bridging the gap between complex spatial data and actionable insight</h2>
+      <p style="margin:0;font-size:17px;line-height:1.7;color:#3d4f6e">Neoterra GIS Services is a dynamic, forward-thinking geospatial company delivering high-quality Geographic Information System solutions across Botswana and the broader region. Founded by a team of passionate geospatial professionals, we believe accurate geographic information is the foundation of sound decision-making — for government planning, environmental management, infrastructure development, and private sector investment.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <div style="background:#053155;border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:10px">
+        <span style="font-size:13px;font-weight:700;letter-spacing:2px;color:#8fa3c7">OUR VISION</span>
+        <p style="margin:0;font-size:17px;line-height:1.6;color:#ffffff">To be the leading GIS services provider in Southern Africa, recognized for innovation, precision, and impact.</p>
+      </div>
+      <div style="background:#eef2f9;border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:10px">
+        <span style="font-size:13px;font-weight:700;letter-spacing:2px;color:#4a7fd6">OUR MISSION</span>
+        <p style="margin:0;font-size:17px;line-height:1.6;color:#053155">To empower organizations and communities through cutting-edge geospatial technology and expert spatial analysis — enabling smarter planning, better resource management, and sustainable development.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <div id="services" style="padding:96px 48px;background:#053155;display:flex;flex-direction:column;gap:48px">
+    <div style="display:flex;flex-direction:column;gap:14px;max-width:720px">
+      <span style="font-size:13px;font-weight:700;letter-spacing:2px;color:#8fa3c7">02 — OUR SERVICES</span>
+      <h2 style="margin:0;font-size:38px;font-weight:800;line-height:1.15;color:#ffffff">A comprehensive suite of GIS services</h2>
+      <p style="margin:0;font-size:17px;line-height:1.6;color:#c3cfe0">Tailored to the needs of government agencies, private companies, NGOs, and development organizations.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px">
+      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:12px">
+        <h3 style="margin:0;font-size:21px;font-weight:700;color:#ffffff">GIS Mapping &amp; Cartography</h3>
+        <p style="margin:0;font-size:15px;line-height:1.6;color:#c3cfe0">Accurate, high-quality maps for planning, reporting, and decision-making.</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:12px">
+        <h3 style="margin:0;font-size:21px;font-weight:700;color:#ffffff">Spatial Data Analysis</h3>
+        <p style="margin:0;font-size:15px;line-height:1.6;color:#c3cfe0">Advanced analysis of geographic datasets to uncover patterns and support strategic planning.</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:12px">
+        <h3 style="margin:0;font-size:21px;font-weight:700;color:#ffffff">Remote Sensing &amp; Imagery</h3>
+        <p style="margin:0;font-size:15px;line-height:1.6;color:#c3cfe0">Interpretation of satellite and aerial imagery for land use, vegetation, and terrain analysis.</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:12px">
+        <h3 style="margin:0;font-size:21px;font-weight:700;color:#ffffff">GIS Database Management</h3>
+        <p style="margin:0;font-size:15px;line-height:1.6;color:#c3cfe0">Design and management of spatial databases to ensure data integrity and accessibility.</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:12px">
+        <h3 style="margin:0;font-size:21px;font-weight:700;color:#ffffff">Field Data Collection</h3>
+        <p style="margin:0;font-size:15px;line-height:1.6;color:#c3cfe0">GPS-enabled field surveys and data capture for accurate ground-truth information.</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:12px">
+        <h3 style="margin:0;font-size:21px;font-weight:700;color:#ffffff">GIS Consulting &amp; Training</h3>
+        <p style="margin:0;font-size:15px;line-height:1.6;color:#c3cfe0">Expert advisory services and hands-on training for organizations adopting GIS technology.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHY NEOTERRA -->
+  <div id="why" style="padding:96px 48px;background:#ffffff;display:grid;grid-template-columns:1fr 1.3fr;gap:72px">
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <span style="font-size:13px;font-weight:700;letter-spacing:2px;color:#4a7fd6">03 — WHY CHOOSE NEOTERRA</span>
+      <h2 style="margin:0;font-size:38px;font-weight:800;line-height:1.15;color:#053155">Local expertise with a global perspective</h2>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:26px">
+      <div style="display:flex;flex-direction:column;gap:6px;border-bottom:1px solid #e2e8f2;padding-bottom:22px">
+        <h3 style="margin:0;font-size:19px;font-weight:700;color:#053155">Local expertise, global perspective</h3>
+        <p style="margin:0;font-size:15px;line-height:1.6;color:#3d4f6e">Deep knowledge of the regional landscape combined with internationally recognized GIS methodologies.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px;border-bottom:1px solid #e2e8f2;padding-bottom:22px">
+        <h3 style="margin:0;font-size:19px;font-weight:700;color:#053155">Multi-disciplinary founding team</h3>
+        <p style="margin:0;font-size:15px;line-height:1.6;color:#3d4f6e">Co-founders with complementary expertise across GIS, remote sensing, data management, and project delivery.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px;border-bottom:1px solid #e2e8f2;padding-bottom:22px">
+        <h3 style="margin:0;font-size:19px;font-weight:700;color:#053155">Client-first approach</h3>
+        <p style="margin:0;font-size:15px;line-height:1.6;color:#3d4f6e">Every solution is customized to address the specific challenges and objectives of our clients.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px;border-bottom:1px solid #e2e8f2;padding-bottom:22px">
+        <h3 style="margin:0;font-size:19px;font-weight:700;color:#053155">Technology-driven</h3>
+        <p style="margin:0;font-size:15px;line-height:1.6;color:#3d4f6e">We leverage the latest GIS platforms, cloud tools, and open-source technologies for efficient, scalable solutions.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <h3 style="margin:0;font-size:19px;font-weight:700;color:#053155">Commitment to capacity building</h3>
+        <p style="margin:0;font-size:15px;line-height:1.6;color:#3d4f6e">We invest in training and knowledge transfer so our clients grow stronger over time.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- VALUES -->
+  <div id="values" style="padding:96px 48px;background:#eef2f9;display:flex;flex-direction:column;gap:48px">
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <span style="font-size:13px;font-weight:700;letter-spacing:2px;color:#4a7fd6">04 — OUR CORE VALUES</span>
+      <h2 style="margin:0;font-size:38px;font-weight:800;color:#053155">What we stand for</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:24px">
+      <div style="background:#ffffff;border-radius:14px;padding:28px 24px;display:flex;flex-direction:column;gap:10px">
+        <h3 style="margin:0;font-size:18px;font-weight:700;color:#053155">Precision</h3>
+        <p style="margin:0;font-size:14px;line-height:1.55;color:#3d4f6e">The highest standards of accuracy in all spatial data and analysis.</p>
+      </div>
+      <div style="background:#ffffff;border-radius:14px;padding:28px 24px;display:flex;flex-direction:column;gap:10px">
+        <h3 style="margin:0;font-size:18px;font-weight:700;color:#053155">Innovation</h3>
+        <p style="margin:0;font-size:14px;line-height:1.55;color:#3d4f6e">Continuously adopting emerging technologies for forward-thinking GIS solutions.</p>
+      </div>
+      <div style="background:#ffffff;border-radius:14px;padding:28px 24px;display:flex;flex-direction:column;gap:10px">
+        <h3 style="margin:0;font-size:18px;font-weight:700;color:#053155">Integrity</h3>
+        <p style="margin:0;font-size:14px;line-height:1.55;color:#3d4f6e">Transparent and ethical in all our client engagements.</p>
+      </div>
+      <div style="background:#ffffff;border-radius:14px;padding:28px 24px;display:flex;flex-direction:column;gap:10px">
+        <h3 style="margin:0;font-size:18px;font-weight:700;color:#053155">Collaboration</h3>
+        <p style="margin:0;font-size:14px;line-height:1.55;color:#3d4f6e">Working closely with clients to deliver tailored outcomes.</p>
+      </div>
+      <div style="background:#ffffff;border-radius:14px;padding:28px 24px;display:flex;flex-direction:column;gap:10px">
+        <h3 style="margin:0;font-size:18px;font-weight:700;color:#053155">Impact</h3>
+        <p style="margin:0;font-size:14px;line-height:1.55;color:#3d4f6e">Committed to work that drives measurable, real-world results.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TEAM -->
+  <div id="team" style="padding:96px 48px;background:#ffffff;display:flex;flex-direction:column;gap:48px">
+    <div style="display:flex;flex-direction:column;gap:14px;max-width:720px">
+      <span style="font-size:13px;font-weight:700;letter-spacing:2px;color:#4a7fd6">05 — FOUNDING TEAM</span>
+      <h2 style="margin:0;font-size:38px;font-weight:800;color:#053155">A shared commitment to geospatial excellence</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:28px">
+      <div style="border:1px solid #e2e8f2;border-radius:16px;padding:36px 32px;display:flex;flex-direction:column;gap:8px">
+        <div style="width:56px;height:56px;border-radius:50%;background:#053155;color:#ffffff;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;margin-bottom:10px">LJ</div>
+        <h3 style="margin:0;font-size:21px;font-weight:700;color:#053155">Lawrence Jane</h3>
+        <span style="font-size:14px;font-weight:600;letter-spacing:1px;color:#4a7fd6">CO-FOUNDER</span>
+      </div>
+      <div style="border:1px solid #e2e8f2;border-radius:16px;padding:36px 32px;display:flex;flex-direction:column;gap:8px">
+        <div style="width:56px;height:56px;border-radius:50%;background:#053155;color:#ffffff;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;margin-bottom:10px">KR</div>
+        <h3 style="margin:0;font-size:21px;font-weight:700;color:#053155">Kabelo Bradly Ranyadi</h3>
+        <span style="font-size:14px;font-weight:600;letter-spacing:1px;color:#4a7fd6">CO-FOUNDER</span>
+      </div>
+      <div style="border:1px solid #e2e8f2;border-radius:16px;padding:36px 32px;display:flex;flex-direction:column;gap:8px">
+        <div style="width:56px;height:56px;border-radius:50%;background:#053155;color:#ffffff;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;margin-bottom:10px">CM</div>
+        <h3 style="margin:0;font-size:21px;font-weight:700;color:#053155">Charles Moatlhodi</h3>
+        <span style="font-size:14px;font-weight:600;letter-spacing:1px;color:#4a7fd6">CO-FOUNDER</span>
+      </div>
+      <div style="border:1px solid #e2e8f2;border-radius:16px;padding:36px 32px;display:flex;flex-direction:column;gap:8px">
+        <div style="width:56px;height:56px;border-radius:50%;background:#053155;color:#ffffff;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;margin-bottom:10px">KM</div>
+        <h3 style="margin:0;font-size:21px;font-weight:700;color:#053155">Keketsi Molefe</h3>
+        <span style="font-size:14px;font-weight:600;letter-spacing:1px;color:#4a7fd6">CO-FOUNDER</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div id="contact" style="padding:96px 48px;background:#053155;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center">
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <span style="font-size:13px;font-weight:700;letter-spacing:2px;color:#8fa3c7">06 — CONTACT US</span>
+      <h2 style="margin:0;font-size:38px;font-weight:800;line-height:1.15;color:#ffffff">Let's discuss how Neoterra can support your organization</h2>
+      <p style="margin:0;font-size:17px;line-height:1.6;color:#c3cfe0">New Earth. Deeper Insight.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:18px;font-size:17px;color:#ffffff">
+      <div style="display:flex;gap:16px;border-bottom:1px solid rgba(255,255,255,0.15);padding-bottom:16px"><span style="width:110px;color:#8fa3c7;font-size:14px;font-weight:600;letter-spacing:1px">LOCATION</span>Gaborone, Botswana</div>
+      <div style="display:flex;gap:16px;border-bottom:1px solid rgba(255,255,255,0.15);padding-bottom:16px"><span style="width:110px;color:#8fa3c7;font-size:14px;font-weight:600;letter-spacing:1px">PHONE</span>74018698</div>
+      <div style="display:flex;gap:16px"><span style="width:110px;color:#8fa3c7;font-size:14px;font-weight:600;letter-spacing:1px">EMAIL</span><a href="mailto:Official.neoterragroup@gmail.com" style="color:#ffffff">Official.neoterragroup@gmail.com</a></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div style="padding:40px 48px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.12);background:#053155">
+    <div style="display:flex;align-items:center;gap:12px">
+      <img src="assets/logo-mark.png" alt="Neoterra" style="width:24px;height:24px;border-radius:4px">
+      <span style="font-size:14px;letter-spacing:1px;color:#c3cfe0">NEOTERRA GIS SERVICES — New Earth. Deeper Insight.</span>
+    </div>
+    <span style="font-size:13px;color:#8fa3c7">© 2026 Neoterra GIS Services. All rights reserved.</span>
+  </div>
+
+</div>
+
+</x-dc>
+</body>
+</html>
